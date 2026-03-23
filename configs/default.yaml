@@ -1,0 +1,24 @@
+model:
+  lambda_f: 0.25
+  mu_r: 0.30
+  alpha: 0.15
+  x0: 1.0
+  t_span_hours: 100
+  n_points: 10000
+
+probe:
+  n_probe: 3
+  i_probe: 3.0
+  l_probe: 0.2
+  l_signal: 0.1
+  tau_default: 3.0
+
+thresholds:
+  theta_threshold: 0.90
+  theta_critical: 0.50
+
+output:
+  csv_file: "vak_article_table_ru.csv"
+  plot_file: "kubernetes_dde_calculations.png"
+  log_file: "calculations.log"
+  dpi: 300
