@@ -13,40 +13,51 @@
 - Оптимальное распределение ресурсов мониторинга
 
 1. Создание виртуального окружения
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate   # Windows
 
-2. Установка зависимостей
+python -m venv venv
+
+source venv/bin/activate  - Linux/Mac          /          # venv\Scripts\activate   - Windows
+
+
+3. Установка зависимостей
+
 pip install -r requirements.txt
 
 Запуск простой модели
 
 3. Базовый запуск
+
 python run.py
 
 4. С указанием конфигурации
+
 python run.py --config configs/default.yaml
 
 5. Без графиков (только расчёты)
+
 python run.py --no-plots
 
 6. С выводом в другую папку
+
 python run.py --output-dir ./results
 
 
 Запуск расчетов для модели с несколькими задержками
 
 3. Базовый запуск
+
 python run_multi.py
 
 4. С указанием конфигурации
+
 python run_multi.py --config configs/multi_component.yaml
 
 5. Без графиков (только расчёты)
+
 python run_multi.py --no-plots
 
 6. С выводом в другую папку
+
 python run_multi.py --output-dir ./results_multi
 
 
@@ -55,18 +66,23 @@ python run_multi.py --output-dir ./results_multi
 ЗАПУСК ТЕСТОВ 
 
 1. Установите pytest
+
 pip install pytest
 
 2. Запустите все тесты
+
 pytest tests/test_multi_solver.py -v
 
 3. Запустите с подробным выводом
+
 pytest tests/test_multi_solver.py -v --tb=long
 
 4. Запустите конкретный тест
+
 pytest tests/test_multi_solver.py::TestMultiComponentDDESolver::test_solve_returns_correct_shapes -v
 
 5. Запустите с покрытием кода (нужен pytest-cov)
+
 pytest tests/test_multi_solver.py -v --cov=src --cov-report=html
 
 
